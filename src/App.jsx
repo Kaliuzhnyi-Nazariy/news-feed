@@ -3,9 +3,9 @@ import "./App.css";
 import { fatchLastNews } from "./redux/news/newsOperations";
 import { useEffect } from "react";
 import { fetchWeather } from "./redux/weather/weatherOperations";
-import WeatherField from "./components/WeatherField/WeatherField";
+import WeatherField from "./components/weather/WeatherField/WeatherField";
 import NewsFied from "./components/NewsField/NewsFied";
-import { newsSelector } from "./redux/news/sellectors";
+// import { newsSelector } from "./redux/news/sellectors";
 
 function App() {
   const dispatch = useDispatch();
@@ -15,12 +15,12 @@ function App() {
     dispatch(fetchWeather());
   }, [dispatch]);
 
-  const newsSelectorData = useSelector(newsSelector);
-  console.log(newsSelectorData);
+  // const newsSelectorData = useSelector(newsSelector);
+  // console.log(newsSelectorData);
   return (
     <>
       <WeatherField />
-      <NewsFied />
+      {/* <NewsFied /> */}
     </>
   );
 }

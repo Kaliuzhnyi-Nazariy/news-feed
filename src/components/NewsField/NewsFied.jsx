@@ -24,7 +24,7 @@ const NewsFied = () => {
   };
 
   const newsSelectorData = useSelector(newsSelector);
-  console.log(page);
+  // console.log(page);
   useEffect(() => {
     dispatch(newsFetchByWord({ credentials: query, pageNumber: page }));
   }, [dispatch, page, query]);

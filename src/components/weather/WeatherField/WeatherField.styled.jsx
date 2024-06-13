@@ -17,3 +17,7 @@ export const WeatherFieldSpan = styled.span`
     "p w w"
     "p w w";
 `;
+
+export const SectionTitle = styled.h2`
+  text-align: center;
+`;
