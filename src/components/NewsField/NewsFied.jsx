@@ -11,16 +11,17 @@ const NewsFied = () => {
   const [page, setPage] = useState(1);
   const [query, setQuery] = useState("");
   const dispatch = useDispatch();
-  // const [lang, setLang] = useState("en");
+  const [lang, setLang] = useState("en");
 
   const handleClick = () => {
     setPage((prevPage) => prevPage + 1);
   };
 
-  // const handleChangeLang = (val) => {
-  //   // setLang(val);
-  //   console.log(val);
-  // };
+  const handleChangeLang = (val) => {
+    setLang(val);
+    setPage(1);
+    dispatch(newsFatchByLanguage({ credential: val, pageNumber: page }));
+  };
 
   const newsSelectorData = useSelector(newsSelector);
   console.log(page);
@@ -33,20 +34,30 @@ const NewsFied = () => {
       <h2>News</h2>
       {/* <details>
         <summary>Language</summary>
-        <select value={lang} onChange={handleChangeLang(lang)}>
-          <option lang="en">EN</option>
-          <option lang="ru">RU</option>
-          <option lang="ar">AR</option>
-          <option lang="fr">FR</option>
-        </select> */}
-      {/* <ul>
-          <li>EN</li>
-          <li>RU</li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul> */}
-      {/* </details> */}
+        <select
+          value={lang}
+          onChange={(evt) => handleChangeLang(evt.target.value)}
+        >
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+          <option value="fr">FR</option>
+          <option value="ru">RU</option>
+          <option value="ar">AR</option>
+        </select>
+      </details> */}
+      <span>
+        <h4>Language</h4>
+        <select
+          value={lang}
+          onChange={(evt) => handleChangeLang(evt.target.value)}
+        >
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+          <option value="fr">FR</option>
+          <option value="ru">RU</option>
+          <option value="ar">AR</option>
+        </select>
+      </span>
       <Formik
         style={{ gridArea: "i" }}
         initialValues={{
@@ -56,7 +67,11 @@ const NewsFied = () => {
           setQuery(value.news),
             setPage(1),
             dispatch(
-              newsFetchByWord({ credentials: value.news, pageNumber: page })
+              newsFetchByWord({
+                credentials: value.news,
+                pageNumber: page,
+                language: lang,
+              })
             );
         }}
       >

@@ -1,15 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
-import {
-  fatchLastNews,
-  newsFatchByLanguage,
-} from "./redux/news/newsOperations";
-// import { newsSelector } from "./redux/news/sellectors";
+import { fatchLastNews } from "./redux/news/newsOperations";
 import { useEffect } from "react";
-// import { weatherSelector } from "./redux/weather/sellectors";
 import { fetchWeather } from "./redux/weather/weatherOperations";
 import WeatherField from "./components/WeatherField/WeatherField";
-// import { newsSelector } from "./redux/news/sellectors";
 import NewsFied from "./components/NewsField/NewsFied";
 import { newsSelector } from "./redux/news/sellectors";
 
@@ -19,13 +13,10 @@ function App() {
   useEffect(() => {
     dispatch(fatchLastNews(1));
     dispatch(fetchWeather());
-  }, []);
+  }, [dispatch]);
 
   const newsSelectorData = useSelector(newsSelector);
   console.log(newsSelectorData);
-  // const weatherSelectorData = useSelector(weatherSelector);
-  // console.log("weatherSelectorData: ", weatherSelectorData);
-  // // console.log(newsOperations);
   return (
     <>
       <WeatherField />

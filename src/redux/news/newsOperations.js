@@ -6,11 +6,11 @@ const apiKey = "wUL9o60Y-PvSlqAcUkN22s0z2mNez6JeCbmV4aMXRwrv1nIx";
 
 export const newsFetchByWord = createAsyncThunk(
   "news/byWord",
-  async ({ credentials, pageNumber }, thunkAPI) => {
+  async ({ credentials, pageNumber, language }, thunkAPI) => {
     console.log(credentials);
     try {
       const res = await axios.get(
-        `https://api.currentsapi.services/v1/search?keywords=${credentials}&apiKey=${apiKey}&page_number=${pageNumber}&page_size=10`
+        `https://api.currentsapi.services/v1/search?keywords=${credentials}&apiKey=${apiKey}&page_number=${pageNumber}&page_size=10&language=${language}`
       );
       console.log(res.data);
       return res.data;
@@ -19,8 +19,6 @@ export const newsFetchByWord = createAsyncThunk(
     }
   }
 );
-
-let pageNumber = 1;
 
 export const newsFatchByLanguage = createAsyncThunk(
   "news/byLang",
