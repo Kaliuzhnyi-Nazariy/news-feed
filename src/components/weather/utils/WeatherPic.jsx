@@ -7,19 +7,21 @@ import {
   WiTornado,
 } from "weather-icons-react";
 
+import "./weatherPic.css";
+
 const WeatherPic = ({ inf }) => {
   return (
     <>
-      {inf === "Clear" ? <WiDaySunny size={128} color="yellow" /> : <></>}
-      {inf === "Clouds" ? <WiCloudy size={128} color="gray" /> : <></>}
-      {inf === "Rain" ? <WiRain size={128} color="blue" /> : <></>}
+      {inf === "Clear" ? <WiDaySunny className="sun" /> : <></>}
+      {inf === "Clouds" ? <WiCloudy className="clouds" /> : <></>}
+      {inf === "Rain" ? <WiRain className="rain" /> : <></>}
       {inf === "Thunderstorm" ? (
-        <WiThunderstorm size={128} color="darkblue" />
+        <WiThunderstorm className="thunderstorm" />
       ) : (
         <></>
       )}
-      {inf === "Snow" ? <WiSnow size={128} color="blue" /> : <></>}
-      {inf === "Tornado" ? <WiTornado size={128} color="blue" /> : <></>}
+      {inf === "Snow" ? <WiSnow className="snow" /> : <></>}
+      {inf === "Tornado" ? <WiTornado className="tornado" /> : <></>}
     </>
   );
 };

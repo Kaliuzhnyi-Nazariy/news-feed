@@ -20,7 +20,7 @@ const FindCity = () => {
         {/* <label htmlFor="city">City</label> */}
         <FieldStyled id="city" name="city" placeholder="Kyiv" />
 
-        <SearchButton type="submit">Search 🔎</SearchButton>
+        <SearchButton type="submit">Search🔎</SearchButton>
       </FormStyled>
     </Formik>
   );

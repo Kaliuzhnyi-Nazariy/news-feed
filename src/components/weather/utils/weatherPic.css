@@ -1,0 +1,72 @@
+.sun {
+  color: yellow;
+  font-size: 128px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 156px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 228px;
+  }
+}
+
+.clouds {
+  color: gray;
+  font-size: 128px;
+  @media screen and (min-width: 768px) {
+    font-size: 156px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 228px;
+  }
+}
+
+.rain {
+  color: blue;
+  font-size: 128px;
+  @media screen and (min-width: 768px) {
+    font-size: 156px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 228px;
+  }
+}
+
+.thunderstorm {
+  color: darkblue;
+  font-size: 128px;
+  @media screen and (min-width: 768px) {
+    font-size: 156px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 228px;
+  }
+}
+
+.snow {
+  color: white;
+  font-size: 128px;
+  @media screen and (min-width: 768px) {
+    font-size: 156px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 228px;
+  }
+}
+
+.tornado {
+  color: rgb(58, 58, 58);
+  font-size: 128px;
+  @media screen and (min-width: 768px) {
+    font-size: 156px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 228px;
+  }
+}

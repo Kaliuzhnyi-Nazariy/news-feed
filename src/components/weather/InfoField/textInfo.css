@@ -1,0 +1,83 @@
+.titleSect {
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+    margin-bottom: -32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 48px;
+    margin-bottom: -32px;
+  }
+}
+
+.infoField {
+  font-weight: 700;
+  font-size: 16px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 48px;
+    margin-top: -56px;
+  }
+}
+
+.pictTempField {
+  /* size: 42; */
+  font-size: 64px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 86px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 256px;
+  }
+}
+
+.pictBaromField {
+  font-size: 42px;
+  margin-top: 10px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 56px;
+    margin-top: 12px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 150px;
+    margin-top: 42px;
+  }
+}
+
+.pictHumField {
+  font-size: 40px;
+  margin-top: 10px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 52px;
+    margin-top: 12px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 146px;
+    margin-top: 42px;
+  }
+}
+
+.pictWindField {
+  font-size: 52px;
+  margin-top: 4px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 64px;
+    margin-top: 8px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 146px;
+    margin-top: 42px;
+  }
+}

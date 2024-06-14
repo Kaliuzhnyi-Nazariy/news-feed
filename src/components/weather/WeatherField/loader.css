@@ -1,0 +1,21 @@
+.loader {
+  height: 197px;
+  width: 207px;
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  justify-self: center;
+  justify-items: center;
+
+  @media screen and (min-width: 768px) {
+    height: 288px;
+    width: 598px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    height: 320px;
+    width: 1136px;
+  }
+}

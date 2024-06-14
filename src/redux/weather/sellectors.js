@@ -4,3 +4,6 @@ export const weatherSelectorWeatherInfo = (state) =>
 export const weatherSelectorMainInfo = (state) =>
   state.weather.weather.mainInfo;
 export const weatherSelectorWind = (state) => state.weather.weather.wind;
+
+export const loadingWeather = (state) => state.weather.isLoading;
+export const errorWeather = (state) => state.weather.error;

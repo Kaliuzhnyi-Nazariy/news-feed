@@ -3,7 +3,7 @@ import { Field, Form } from "formik";
 
 export const FieldStyled = styled(Field)`
   display: flex;
-  width: 50%;
+  width: 60%;
   background-color: rgba(255, 255, 255, 0.5);
   padding: 8px 12px;
   border: 2px white solid;
@@ -17,6 +17,14 @@ export const FieldStyled = styled(Field)`
     background-color: rgba(255, 255, 255, 0.6);
     border: 2px rgba(255, 123, 0, 0.3) solid;
     outline: rgba(255, 123, 0, 0.3);
+  }
+
+  @media screen and (min-width: 425px) {
+    width: 70%;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding: 12px;
   }
 `;
 
@@ -36,7 +44,8 @@ export const SearchButton = styled.button`
   border: 2px white solid;
   border-radius: 16px;
 
-  font-weight: 400;
+  font-weight: 200;
+  font-size: 10px;
 
   &:hover,
   &:focus,
@@ -44,5 +53,15 @@ export const SearchButton = styled.button`
     background-color: rgba(255, 123, 0, 0.6);
     color: white;
     border: 2px rgba(255, 255, 255, 0.3) solid;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 16px;
+
+    padding: 12px;
   }
 `;

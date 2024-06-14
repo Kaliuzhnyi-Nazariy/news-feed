@@ -14,7 +14,7 @@ export const fetchWeather = createAsyncThunk(
       );
       return res.data;
     } catch (error) {
-      thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
@@ -28,7 +28,7 @@ export const fetchUserWeather = createAsyncThunk(
       );
       return res.data;
     } catch (error) {
-      thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
