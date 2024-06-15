@@ -21,10 +21,8 @@ const newsSlice = createSlice({
         state.error = "";
       })
       .addCase(newsFetchByWord.fulfilled, (state, action) => {
-        console.log(state, action);
         state.isLoading = false;
         state.news = action.payload.news;
-        console.log(state);
       })
       .addCase(newsFetchByWord.rejected, (state, action) => {
         state.isLoading = false;
@@ -35,7 +33,6 @@ const newsSlice = createSlice({
         state.error = "";
       })
       .addCase(newsFatchByLanguage.fulfilled, (state, action) => {
-        console.log(state, action);
         state.isLoading = false;
         state.news = action.payload.news;
       })

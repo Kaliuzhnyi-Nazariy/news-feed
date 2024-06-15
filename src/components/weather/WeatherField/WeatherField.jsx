@@ -21,8 +21,6 @@ const WeatherField = () => {
   const loadingWeatherData = useSelector(loadingWeather);
   const errorWeatherData = useSelector(errorWeather);
 
-  console.log(errorWeatherData);
-
   if (errorWeatherData) {
     toast.error("City not found!");
   }
