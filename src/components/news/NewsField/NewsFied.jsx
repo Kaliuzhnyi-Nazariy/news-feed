@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import {
+  errorSelector,
   isLoadingSelector,
   newsSelector,
 } from "../../../redux/news/sellectors";
@@ -10,9 +11,20 @@ import {
   newsFetchByWord,
 } from "../../../redux/news/newsOperations";
 import NewsItem from "../NewsList/Newsitem";
-import { ListOfNews } from "./NewsField.styled";
+import {
+  ButtonLoadMore,
+  ChangeLang,
+  ContantPlace,
+  LangTitle,
+  ListOfNews,
+  NoNews,
+  PagePlace,
+  SelectLang,
+} from "./NewsField.styled";
 import { SpinnerDiamond } from "spinners-react";
 import "../../weather/WeatherField/loader.css";
+import "./form.css";
+import toast, { Toaster } from "react-hot-toast";
 
 const NewsFied = () => {
   const [page, setPage] = useState(1);
@@ -22,6 +34,11 @@ const NewsFied = () => {
 
   const newsSelectorData = useSelector(newsSelector);
   const isLoadingSelectorData = useSelector(isLoadingSelector);
+  const errorSelectorData = useSelector(errorSelector);
+
+  if (errorSelectorData) {
+    toast.error({ errorSelector });
+  }
 
   useEffect(() => {
     if (query) {
@@ -32,10 +49,13 @@ const NewsFied = () => {
           language: lang,
         })
       );
+      if (newsSelectorData.length === 0) {
+        toast.error("Not found!");
+      }
     } else {
       dispatch(newsFatchByLanguage({ credential: lang, pageNumber: page }));
     }
-  }, [dispatch, page, query, lang]);
+  }, [dispatch, page, query, lang, newsSelectorData.length]);
 
   const handleClick = () => {
     setPage((prevPage) => prevPage + 1);
@@ -48,21 +68,12 @@ const NewsFied = () => {
   };
 
   return (
-    <div
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-    >
-      <div
-        style={{
-          width: "80%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <h2>News</h2>
-        <span>
-          <h4>Language</h4>
-          <select
+    <PagePlace>
+      <ContantPlace>
+        <h2 className="section-title">News</h2>
+        <ChangeLang>
+          <LangTitle>Language</LangTitle>
+          <SelectLang
             value={lang}
             onChange={(evt) => handleChangeLang(evt.target.value)}
           >
@@ -71,8 +82,8 @@ const NewsFied = () => {
             <option value="fr">FR</option>
             <option value="ru">RU</option>
             <option value="ar">AR</option>
-          </select>
-        </span>
+          </SelectLang>
+        </ChangeLang>
 
         <Formik
           initialValues={{
@@ -90,10 +101,14 @@ const NewsFied = () => {
             );
           }}
         >
-          <Form>
-            <label htmlFor="news">Find News</label>
-            <Field id="news" name="news" placeholder="Kyiv" />
-            <button type="submit">FIND🔎</button>
+          <Form className="form">
+            <label htmlFor="news" className="label">
+              Find News
+            </label>
+            <Field id="news" name="news" placeholder="Kyiv" className="input" />
+            <button type="submit" className="button">
+              FIND🔎
+            </button>
           </Form>
         </Formik>
 
@@ -113,9 +128,14 @@ const NewsFied = () => {
             ))}
           </ListOfNews>
         )}
-        <button onClick={handleClick}>Load More</button>
-      </div>
-    </div>
+        {newsSelectorData.length < 10 ? (
+          <NoNews>OOPS, NO MORE NEWS!</NoNews>
+        ) : (
+          <ButtonLoadMore onClick={handleClick}>Load More</ButtonLoadMore>
+        )}
+      </ContantPlace>
+      <Toaster />
+    </PagePlace>
   );
 };
 

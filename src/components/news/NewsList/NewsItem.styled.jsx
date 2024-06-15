@@ -5,6 +5,13 @@ export const StyleLi = styled.li`
   border: 1px solid lightgray;
   border-radius: 16px;
 
+  transition: all 0.25s;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+  }
+
   @media screen and (min-width: 768px) {
     width: calc((100% / 2) - 32px);
   }

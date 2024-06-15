@@ -28,7 +28,7 @@ const WeatherField = () => {
   }
   return (
     <>
-      <SectionTitle>Weather</SectionTitle>
+      <SectionTitle className="section-title">Weather</SectionTitle>
       <BackSpan>
         <WeatherFieldSpan>
           <FindCity />

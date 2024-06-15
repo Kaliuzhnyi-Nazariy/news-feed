@@ -33,6 +33,10 @@ export const BackSpan = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (min-width: 768px) {
+    padding: 16px 0;
+  }
 `;
 
 export const SectionTitle = styled.h2`
