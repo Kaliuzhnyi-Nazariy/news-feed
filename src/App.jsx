@@ -4,8 +4,7 @@ import { fatchLastNews } from "./redux/news/newsOperations";
 import { useEffect } from "react";
 import { fetchWeather } from "./redux/weather/weatherOperations";
 import WeatherField from "./components/weather/WeatherField/WeatherField";
-import NewsFied from "./components/NewsField/NewsFied";
-// import { newsSelector } from "./redux/news/sellectors";
+import NewsFied from "./components/news/NewsField/NewsFied";
 
 function App() {
   const dispatch = useDispatch();

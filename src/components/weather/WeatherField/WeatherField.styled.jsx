@@ -33,7 +33,6 @@ export const BackSpan = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px;
 `;
 
 export const SectionTitle = styled.h2`
