@@ -1,6 +1,7 @@
 {
   "name": "news-feed",
   "private": true,
+  "homepage": "https://Kaliuzhnyi-Nazariy.github.io/news-feed/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
